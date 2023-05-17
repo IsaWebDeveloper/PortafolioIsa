@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+    /*padding-top: 120px; para que el encabezado fijo no lo tape*/
+    font-family: farsan, calibri;
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    padding: 10px;
+    /* height: 70px; sin ancho el encabezado crece segun su contenido*/
+    width: 100%;
+    box-shadow: 0px 5px 10px rgb(0,0,0,.2);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-color: white; 
+}
+
+@media screen and (min-width:576px) {
+    header {
+        flex-direction: row;
+    }
+}
+
+/* .logo-isa {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(42,154,250);
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.3), 
+    1px -2px 2px rgba(42,154,250,0.3);
+} comentado porque no se está usando este logo*/
+
+/* animación para el guion del logo*/
+/* @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  } comentado porque no se esta usando*/
+  
+  /* Aplicar la animación al elemento */
+  /* .blink {
+    animation: blink 1s infinite;
+  } comentado porque no se esta usando. se va usar cuando se tenga la imagen para la animación */
+
+.lstprimarymenu{
+    display: flex; /*por defecto los hijos de un contendor flex se ubican en fila*/
+    justify-content: space-evenly;
+    width: 300px; /* al declarar el ancho del menu junto con el valor space-evenly los elementos se distribuyen uniformemente con un espacio a la derecha mas agradable (junta el padding del header mas el espacio que da el space-evenly */
+    margin: inherit;
+    padding: inherit;
+    list-style-type: none;
+}
+
+.elmprimarymenu {    
+    padding-top: 10px;
+}
+
+/* reemplaza la imagen de icono por una de color al dar click, valido para version desktop y mobile */
+.link-menu:active{
+    color: rgb(42,154,250);
+}
+
+.img1:active {
+    content: url(/img/ImagenesDeMuestra/On_ConoceAIsa.jpeg);           
+}
+.img2:active {
+    content: url(/img/ImagenesDeMuestra/On_MiTrabajo.jpeg);        
+}
+.img3:active {
+    content: url(/img/ImagenesDeMuestra/On_Portafolio.jpeg);        
+}
+.img4:active {
+    content: url(/img/ImagenesDeMuestra/On_Blog.jpeg);        
+}
+.img5:active {
+    content: url(/img/ImagenesDeMuestra/On_Conversemos.jpeg);        
+}
+
+/* se reemplaza la imagen de icono por una de color para version desktop, detecta dispositivo con cursor */
+@media (hover: hover){
+
+    .elmprimarymenu:hover .text-menu{
+    color: rgb(255,121,251);
+    }
+    .elmprimarymenu:hover .img1 {
+        content: url(/img/ImagenesDeMuestra/On_ConoceAIsa.jpeg);           
+    }
+    .elmprimarymenu:hover .img2{
+        content: url(/img/ImagenesDeMuestra/On_MiTrabajo.jpeg);        
+    }
+    .elmprimarymenu:hover .img3 {
+        content: url(/img/ImagenesDeMuestra/On_Portafolio.jpeg);        
+    }
+    .elmprimarymenu:hover .img4 {
+        content: url(/img/ImagenesDeMuestra/On_Blog.jpeg);        
+    }
+    .elmprimarymenu:hover .img5 {
+        content: url(/img/ImagenesDeMuestra/On_Conversemos.jpeg);        
+    }
+}
+
+.isa{
+    width: 50px;
+    height: 50px;
+}
+
+.link-menu {
+    display: flex; /* para hacer que el link sea un contenedor flexible cuyos hijos son la imagen y el texto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+
+.img-menu {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 7px; /* da espacio entre la imagen y el texto */
+}
+
+.text-menu{
+    font-size: 12px;
+}
+
+.section-one{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 100%;  
+    padding-top: 150px;
+    /* padding-left: 20px;  */
+    background: rgb(42,154,250);
+    background: linear-gradient(180deg, rgba(42,154,250,1) 0%, rgba(179,147,255,0.8) 49%, rgba(255,121,251,0.6) 77%, rgba(255,255,255,1) 94%);
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+.section-b{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px 20px 20px 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,121,251,0.66) 32%, rgba(179,147,255,0.70) 63%, rgba(42,154,250,0.80) 100%);
+}
+
+h3{
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    letter-spacing: 1px;
+}
+
+.photo {
+    width: 150px;
+    height: 160px;
+        
+}
+
+.frame-photo {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(255,121,251);
+    border-radius: 40px 0px 40px 0px;
+    background-color: white;
+    margin-bottom: 20px;     
+    text-align: center; /* se aplica para centrar todo lo que esté en el div*/
+}
+
+.hello-text {
+    width: 80%;
+    background-color: white;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.logos-tecno{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+@media screen and (min-width:980px) {
+    .hello-text{
+        font-size: 1.3rem;
+    }
+
+    .section-one{
+        flex-direction: row;
+    }
+    
+    .section-a{
+        padding-top: 100px;
+    }
+
+    .section-b{
+        flex-direction: column;
+        padding-top: 80px;
+        background: rgb(42,154,250);
+        background: linear-gradient(180deg, rgba(42,154,250,1) 0%, rgba(179,147,255,0.8) 49%, rgba(255,121,251,0.6) 77%, rgba(255,255,255,1) 94%);
+    }
+
+    .logos-tecno{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        
+    }
+} 
+
+@media screen and (min-width:1328px) {
+    .hello-text{
+        font-size: 1.3rem;
+    }
+
+    .section-one{
+        flex-direction: row;
+    }
+    
+    .section-a{
+        padding-top: 100px;
+    }
+
+    .section-b{
+        flex-direction: column;
+        padding-top: 80px;
+        background: rgb(42,154,250);
+        background: linear-gradient(180deg, rgba(42,154,250,1) 0%, rgba(179,147,255,0.8) 49%, rgba(255,121,251,0.6) 77%, rgba(255,255,255,1) 94%);
+    }
+
+    .logos-tecno{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        
+    }
+}
+
+.title-section {
+    /*position: sticky; hace que el titulo se quede fijo mientras se hace scroll*/
+    /* top: 50px; */
+    display: block;
+    height: 40px;
+    padding: 7px;
+    background-color: white;
+    
+}
+
+footer{
+    
+}
+
+.img-footer{
+    width: 30px;
+    height: 20px;
+}
+
+
+
+/* aca comienzan los estilos provisionales y de prueba */
+
+/* .section-a {
+    border: 5px solid blue;
+    border-radius: 10px 50px; 
+    background-color:aqua;
+    margin: 5px;
+    padding: 10px;
+} */
+
+/* CSS para colocar la imagen de fondo en toda la pantalla y que se responsive
+body{
+    background-image: ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+} */
